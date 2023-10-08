@@ -1,0 +1,151 @@
+<html>
+<title>CTG home</title>
+<link rel="icon" type="image/x-icon" href="logo.PNG">
+<head>
+<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="index.html">Home</a></li>
+  <li><a class="active2" href="downloads.html">Downloads</a></li>
+  <li><a class="active" href="about.html">About</a></li>
+    <li><a class="active2" href="things.html">Commands</a></li>
+</ul>
+<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+<h1>Commands:</h1>
+<p>https://www.phind.com/search?cache=hzjgsuwjjn9rr4chlmjadbyk</p>
+  <hr>
+  <p>[POWERSHELL] Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process</p>
+  <hr>
+  <p>[POWERSHELL] Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
+</p>
+  <hr>
+  <p>[POWERSHELL] powershell.exe .\yourscript.ps1 -executionpolicy bypass</p>
+  <hr>
+<p>[PSCredential object] $username = "domain01\admin01"
+$password = Get-Content 'C:\mysecurestring.txt' | ConvertTo-SecureString
+$cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $password</p>
+  <hr>
+  <hr>
+  <p>https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3</p>
+  <hr>
+  <p>[POWERSHELL] Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+Get-ExecutionPolicy -List
+
+Scope ExecutionPolicy
+        ----- ---------------
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process       Undefined
+  CurrentUser    RemoteSigned
+ LocalMachine    RemoteSigned</p>
+  <hr>
+  <p>[POWERSHELL] PS> Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope LocalMachine
+
+Set-ExecutionPolicy : PowerShell updated your local preference successfully, but the setting is
+overridden by the Group Policy applied to your system. Due to the override, your shell will retain
+its current effective execution policy of "AllSigned". Contact your Group Policy administrator for
+more information. At line:1 char:20 + Set-ExecutionPolicy <<<< restricted
+
+PS> Get-ChildItem -Path HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds
+
+    Hive: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds
+
+Name                    Property
+----                    --------
+Microsoft.PowerShell    Path            : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+                        ExecutionPolicy : Restricted
+ScriptedDiagnostics     ExecutionPolicy : Unrestricted</p>
+  <hr>
+  <p>[POWERSHELL] PS> Invoke-Command -ComputerName Server01 -ScriptBlock { Get-ExecutionPolicy } | Set-ExecutionPolicy
+</p>
+  <hr>
+  <p>[POWERSHELL] Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope CurrentUser
+Get-ExecutionPolicy -List
+
+Scope ExecutionPolicy
+        ----- ---------------
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process       Undefined
+  CurrentUser       AllSigned
+ LocalMachine    RemoteSigned</p>
+  <hr>
+  <p>[POWERSHELL] Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope CurrentUser
+Get-ExecutionPolicy -List
+
+Scope ExecutionPolicy
+        ----- ---------------
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process       Undefined
+  CurrentUser       Undefined
+ LocalMachine    RemoteSigned</p>
+  <hr>
+  <p>[POWERSHELL] Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope Process
+
+Scope ExecutionPolicy
+        ----- ---------------
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process       AllSigned
+  CurrentUser    RemoteSigned
+ LocalMachine    RemoteSigned</p>
+  <hr>
+  <p>[POWERSHELL] PS> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+
+PS> Get-ExecutionPolicy
+
+RemoteSigned
+
+PS> .\Start-ActivityTracker.ps1
+
+.\Start-ActivityTracker.ps1 : File .\Start-ActivityTracker.ps1 cannot be loaded.
+The file .\Start-ActivityTracker.ps1 is not digitally signed.
+The script will not execute on the system.
+For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ .\Start-ActivityTracker.ps1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : NotSpecified: (:) [], PSSecurityException
++ FullyQualifiedErrorId : UnauthorizedAccess
+
+PS> Unblock-File -Path .\Start-ActivityTracker.ps1
+
+PS> Get-ExecutionPolicy
+
+RemoteSigned
+
+PS> .\Start-ActivityTracker.ps1
+
+Task 1:</p>
+  <hr>
+  <hr>
+  <p>https://stackoverflow.com/questions/13212688/how-do-i-run-powershell-scripts-without-admin-rights</p>
+  <hr>
+  <p>Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser</p>
+  <hr>
+  <p>Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process</p>
+  <hr>
+  <hr>
+  <p>https://serverfault.com/questions/336121/how-to-ignore-an-error-in-powershell-and-let-it-continue</p>
+  <hr>
+  <p>get-process -ComputerName server1,server2,server3 -name explorer | Select-Object processname,machinename</p>
+  <hr>
+  <p>Get-Process : Couldn't connect to remote machine.At line:1 char:12 + get-process <<<<  -ComputerName server1,server2,server3 -name explorer | format-table processname,machinename
++ CategoryInfo          : NotSpecified: (:) [Get-Process], InvalidOperatio   nException    + FullyQualifiedErrorId : System.InvalidOperationException,Microsoft.Power   Shell.Commands.GetProcessCommand</p>
+<hr>
+  <hr>
+</div>
+
+
+</body>
+</html>
+</head>
+
+
+
+</html>
