@@ -28,8 +28,8 @@
 <p>[PSCredential object] $username = "domain01\admin01"
 $password = Get-Content 'C:\mysecurestring.txt' | ConvertTo-SecureString
 $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $password</p>
-  <hr>
-  <hr>
+  <hr color="orange" />
+  <hr color="orange" />
   <p>https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3</p>
   <hr>
   <p>[POWERSHELL] Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
@@ -122,8 +122,8 @@ RemoteSigned
 PS> .\Start-ActivityTracker.ps1
 
 Task 1:</p>
-  <hr>
-  <hr>
+  <hr color="orange" />
+  <hr color="orange" />
   <p>https://stackoverflow.com/questions/13212688/how-do-i-run-powershell-scripts-without-admin-rights</p>
   <hr>
   <p>Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser</p>
