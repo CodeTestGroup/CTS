@@ -1,31 +1,170 @@
+
+
 <html>
-<title>CTG home</title>
-<link rel="icon" type="image/x-icon" href="logo.PNG">
 <head>
-  <script type="text/javascript" src="js.js"></script>
-  <script type="text/javascript" src="login.js"></script>
-<link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="login.css">
+    <table style="background-color:#3d567d">
+<style>
+body {
+    font: 100% Lucida Sans, Verdana;
+    margin: 20px;
+    line-height: 26px;
+}
+    body {
+  background-color: gray;
+}
+
+.container {
+    xmin-width: 900px;
+}
+
+.wrapper {
+    position: relative;
+    overflow: auto;
+}
+
+#top, #sidebar, #bottom, .menuitem {
+    border-radius: 4px;
+    margin: 4px;
+}
+
+#top {
+    background-color: #912075;
+    color: #ffffff;
+    padding: 15px;
+}
+
+#menubar {
+    width: 200px;
+    float: left
+}
+
+#main {
+    padding: 10px;
+    margin: 0 210px;
+    height:250px
+}
+
+#sidebar {
+    background-color: #32a4e7;
+    color: #ffffff;
+    padding: 10px;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    position: absolute;
+    width:350px;
+    height:200px
+}
+
+#bottom {
+    border: 1px solid #d4d4d4;
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+    font-size: 70%;
+    line-height: 14px;
+}
+
+#top h1, #top p, #menulist {
+    margin: 0;
+    padding: 0;
+}
+
+.menuitem {
+    background-color: #912075;
+    border: 1px solid #d4d4d4;
+    list-style-type: none;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.menuitem:hover {
+    background-color: #6e305e;
+}
+
+
+
+
+a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+@media (max-width: 800px) {
+    #sidebar {
+        width: auto;
+        position: relative;
+    } 
+    #main {
+        margin-right: 0;
+    }    
+       
+}
+
+@media (max-width: 600px) {
+    #menubar {
+        width: auto;
+        float: none;
+    }
+    #main {
+        margin: 0;
+    }    
+}
+</style>
+
+
 
 </head>
 <body>
+<script>
+    function home() {
+    window.location.href = "index.html";
+    }
+     function code() {
+    window.location.href = "downloads.html";
+    }
+     function about() {
+    window.location.href = "about.html";
+    }
+</script>
+<div class="container wrapper">
+  <div id="top">
+    <h1>CTG website</h1>
+  </div>
+  <div class="wrapper">
+   <div id="menubar">
+     <ul id="menulist">
+       <li class="menuitem" onclick="home()">Home</li>
+       <li class="menuitem" onclick="code()">Code</li>
+       <li class="menuitem" onclick="about()">About</li>
 
-<ul>
-   <li><a class="active" href="index.html">Home</a></li>
-  <li><a class="active2" href="downloads.html">Code</a></li>
-  <li><a class="active" href="about.html">About</a></li>
-  <li><a class="active2" href="https://codetestgroup.github.io/pqtest/">PQ test</a></li>
-  <li><a class="active" href="announcemnts.html">Announements</a></li>
-</ul>
-<div style="margin-left:25%;padding:1px 16px;height:1000px;">
-<h1>COMING SOON!</h1>
+     </ul>
+    </div>
+    <div id="main">
+      <h1>About</h1>
+      <p>Hello</p>
+  </div>  
+ <div id="sidebar">
+      <h3>Announcements:</h3>
+     <iframe src="anounce.txt" name="anounce" id="anounce"
+style="background:#fff;width:100%;height:130px">
+</iframe>
+    </div>
+     
+   </div>
+  
 
+    
+  <div id="bottom">
+   Coppyright 2023 CodeTestGroup
+  </div>
 </div>
 
+
 </body>
-</html>
-</head>
-
-
-
 </html>
