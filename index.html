@@ -122,15 +122,39 @@ a:hover {
 </head>
 <body>
 <script>
-    function home() {
-    window.location.href = "index.html";
+   function home() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("main").innerHTML =
+      this.responseText;
     }
-     function code() {
-    window.location.href = "downloads.html";
+  };
+  xhttp.open("GET", "home.txt", true);
+  xhttp.send();
+}
+    function code() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("main").innerHTML =
+      this.responseText;
     }
-     function about() {
-    window.location.href = "about.html";
+  };
+  xhttp.open("GET", "code.txt", true);
+  xhttp.send();
+}
+    function about() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("main").innerHTML =
+      this.responseText;
     }
+  };
+  xhttp.open("GET", "about.txt", true);
+  xhttp.send();
+}
 </script>
 <div class="container wrapper">
   <div id="top">
